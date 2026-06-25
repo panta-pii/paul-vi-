@@ -1,0 +1,1825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paul VI High School — Mohale's Hoek, Lesotho</title>
+    <meta name="description" content="Paul VI High School is a Catholic secondary school in Mohale's Hoek, Lesotho, dedicated to academic excellence, discipline, and holistic development." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        /* ===== RESET & BASE ===== */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0d1b3e;
+            --primary-light: #1a2a6c;
+            --primary-dark: #080f26;
+            --accent: #c9a94e;
+            --accent-light: #e0c66a;
+            --accent-dark: #a8892e;
+            --white: #ffffff;
+            --off-white: #f8f6f2;
+            --gray-100: #f3f1ed;
+            --gray-200: #e8e5df;
+            --gray-300: #d0ccc4;
+            --gray-600: #6b6760;
+            --gray-800: #2d2a24;
+            --shadow-sm: 0 2px 12px rgba(13, 27, 62, 0.08);
+            --shadow-md: 0 8px 30px rgba(13, 27, 62, 0.12);
+            --shadow-lg: 0 20px 60px rgba(13, 27, 62, 0.18);
+            --radius: 16px;
+            --radius-sm: 8px;
+            --transition: 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--gray-800);
+            background: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 2.4rem;
+            color: var(--primary);
+            margin-bottom: 12px;
+            letter-spacing: -0.02em;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--gray-600);
+            max-width: 640px;
+            line-height: 1.7;
+        }
+
+        .section-header {
+            margin-bottom: 48px;
+        }
+
+        .section-header .accent-line {
+            display: inline-block;
+            width: 60px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 4px;
+            margin-top: 8px;
+        }
+
+        .text-accent {
+            color: var(--accent);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            justify-content: center;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: var(--white);
+        }
+        .btn-primary:hover {
+            background: var(--primary-light);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-accent {
+            background: var(--accent);
+            color: var(--white);
+        }
+        .btn-accent:hover {
+            background: var(--accent-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        .btn-outline:hover {
+            background: var(--primary);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .btn-white {
+            background: var(--white);
+            color: var(--primary);
+        }
+        .btn-white:hover {
+            background: var(--off-white);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-whatsapp {
+            background: #25D366;
+            color: white;
+        }
+        .btn-whatsapp:hover {
+            background: #1da851;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* ===== NAVIGATION ===== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 16px 0;
+            transition: var(--transition);
+            background: transparent;
+        }
+
+        .navbar.scrolled {
+            background: rgba(13, 27, 62, 0.97);
+            backdrop-filter: blur(12px);
+            padding: 10px 0;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .navbar .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--white);
+            font-weight: 700;
+            font-size: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-logo .logo-icon {
+            width: 44px;
+            height: 44px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.1rem;
+            color: var(--primary);
+            flex-shrink: 0;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--white);
+        }
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            background: var(--accent);
+            color: var(--primary) !important;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+        .nav-cta::after {
+            display: none !important;
+        }
+        .nav-cta:hover {
+            background: var(--accent-light) !important;
+            color: var(--primary) !important;
+        }
+
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+        }
+
+        .nav-toggle span {
+            width: 28px;
+            height: 3px;
+            background: var(--white);
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+
+        .nav-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+        .nav-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .nav-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background: var(--primary-dark);
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(13, 27, 62, 0.85) 0%, rgba(13, 27, 62, 0.40) 70%);
+            z-index: 1;
+        }
+
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* placeholder gradient if no image */
+        .hero-bg .gradient-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(145deg, #0d1b3e 0%, #1a2a6c 50%, #2a3a7c 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: rgba(255, 255, 255, 0.06);
+            font-weight: 800;
+            letter-spacing: 4px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 720px;
+            padding: 120px 0 80px;
+            color: var(--white);
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(201, 169, 78, 0.20);
+            border: 1px solid rgba(201, 169, 78, 0.30);
+            padding: 6px 18px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-light);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.8rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+
+        .hero h1 .highlight {
+            color: var(--accent);
+            position: relative;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 520px;
+            line-height: 1.8;
+            margin-bottom: 36px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 48px;
+            margin-top: 56px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.10);
+        }
+
+        .hero-stats .stat-item {
+            text-align: left;
+        }
+
+        .hero-stats .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--white);
+            display: block;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .hero-stats .stat-label {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.6);
+            font-weight: 400;
+        }
+
+        /* ===== ABOUT ===== */
+        .about {
+            background: var(--off-white);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .about-text p {
+            color: var(--gray-600);
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+
+        .about-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .about-values {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        .value-chip {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--white);
+            padding: 12px 18px;
+            border-radius: var(--radius-sm);
+            box-shadow: var(--shadow-sm);
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--primary);
+            transition: var(--transition);
+            border: 1px solid transparent;
+        }
+
+        .value-chip:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .value-chip .icon {
+            color: var(--accent);
+            font-size: 1rem;
+        }
+
+        .about-image {
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            background: var(--gray-200);
+            min-height: 320px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(145deg, #1a2a6c, #0d1b3e);
+            color: rgba(255, 255, 255, 0.10);
+            font-size: 1.2rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            position: relative;
+        }
+
+        .about-image .placeholder-text {
+            position: absolute;
+            color: rgba(255, 255, 255, 0.15);
+            font-size: 1.4rem;
+            font-weight: 300;
+            letter-spacing: 4px;
+        }
+
+        /* ===== ADMISSIONS ===== */
+        .admissions {
+            background: var(--white);
+        }
+
+        .admissions-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .admission-card {
+            background: var(--off-white);
+            border-radius: var(--radius);
+            padding: 36px 32px;
+            transition: var(--transition);
+            border: 1px solid var(--gray-200);
+        }
+
+        .admission-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--accent);
+        }
+
+        .admission-card .card-icon {
+            font-size: 2.4rem;
+            color: var(--accent);
+            margin-bottom: 16px;
+        }
+
+        .admission-card h3 {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .admission-card p,
+        .admission-card li {
+            color: var(--gray-600);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .admission-card ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 12px;
+        }
+
+        .admission-card ul li {
+            padding: 4px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .admission-card ul li::before {
+            content: '✓';
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .admission-card .btn {
+            margin-top: 20px;
+        }
+
+        .boarding-badge {
+            display: inline-block;
+            background: var(--primary);
+            color: var(--white);
+            padding: 4px 14px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 8px;
+        }
+
+        /* ===== ACADEMICS ===== */
+        .academics {
+            background: var(--off-white);
+        }
+
+        .subjects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 16px;
+        }
+
+        .subject-card {
+            background: var(--white);
+            padding: 20px 18px;
+            border-radius: var(--radius-sm);
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            border: 1px solid transparent;
+            font-weight: 500;
+            font-size: 0.9rem;
+            color: var(--primary);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .subject-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .subject-card .subject-icon {
+            font-size: 1.4rem;
+            color: var(--accent);
+        }
+
+        /* ===== STUDENT LIFE ===== */
+        .student-life {
+            background: var(--white);
+        }
+
+        .activities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .activity-card {
+            background: var(--off-white);
+            padding: 24px 20px;
+            border-radius: var(--radius-sm);
+            text-align: center;
+            transition: var(--transition);
+            border: 1px solid var(--gray-200);
+        }
+
+        .activity-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--accent);
+        }
+
+        .activity-card .act-icon {
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        .activity-card h4 {
+            font-size: 1rem;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* ===== BOARDING ===== */
+        .boarding {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .boarding .section-title {
+            color: var(--white);
+        }
+        .boarding .section-subtitle {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        .boarding .section-header .accent-line {
+            background: var(--accent);
+        }
+
+        .boarding-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+
+        .boarding-card {
+            background: rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.10);
+            border-radius: var(--radius);
+            padding: 36px 32px;
+            transition: var(--transition);
+        }
+
+        .boarding-card:hover {
+            background: rgba(255, 255, 255, 0.10);
+            transform: translateY(-4px);
+        }
+
+        .boarding-card .b-icon {
+            font-size: 2.4rem;
+            color: var(--accent);
+            margin-bottom: 12px;
+        }
+
+        .boarding-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+        }
+
+        .boarding-card p {
+            color: rgba(255, 255, 255, 0.75);
+            line-height: 1.7;
+        }
+
+        .boarding-card ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 12px;
+        }
+
+        .boarding-card ul li {
+            padding: 4px 0;
+            color: rgba(255, 255, 255, 0.7);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .boarding-card ul li::before {
+            content: '✦';
+            color: var(--accent);
+        }
+
+        /* ===== NEWS ===== */
+        .news {
+            background: var(--off-white);
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 28px;
+        }
+
+        .news-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .news-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .news-card .news-image {
+            height: 180px;
+            background: linear-gradient(145deg, #1a2a6c, #0d1b3e);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.10);
+            font-weight: 300;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+        }
+
+        .news-card .news-body {
+            padding: 24px 22px;
+        }
+
+        .news-card .news-tag {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--white);
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 2px 12px;
+            border-radius: 50px;
+            margin-bottom: 8px;
+        }
+
+        .news-card h4 {
+            font-size: 1.1rem;
+            color: var(--primary);
+            margin-bottom: 6px;
+        }
+
+        .news-card p {
+            color: var(--gray-600);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .news-card .news-date {
+            font-size: 0.8rem;
+            color: var(--gray-600);
+            margin-top: 12px;
+            display: block;
+        }
+
+        /* ===== GALLERY ===== */
+        .gallery {
+            background: var(--white);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 16px;
+        }
+
+        .gallery-item {
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            aspect-ratio: 1 / 1;
+            background: linear-gradient(145deg, #1a2a6c, #0d1b3e);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.08);
+            font-weight: 300;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.03);
+            box-shadow: var(--shadow-md);
+        }
+
+        .gallery-item .gallery-label {
+            position: absolute;
+            bottom: 12px;
+            left: 12px;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.75rem;
+            font-weight: 500;
+            background: rgba(0, 0, 0, 0.30);
+            padding: 4px 14px;
+            border-radius: 50px;
+            backdrop-filter: blur(4px);
+        }
+
+        /* ===== CONTACT ===== */
+        .contact {
+            background: var(--off-white);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+        }
+
+        .contact-info h3 {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+
+        .contact-info p {
+            color: var(--gray-600);
+            line-height: 1.7;
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 14px 0;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .contact-detail:last-child {
+            border-bottom: none;
+        }
+
+        .contact-detail .cd-icon {
+            width: 44px;
+            height: 44px;
+            background: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            font-size: 1.1rem;
+            flex-shrink: 0;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .contact-detail .cd-text {
+            flex: 1;
+        }
+        .contact-detail .cd-text strong {
+            display: block;
+            color: var(--primary);
+            font-weight: 600;
+        }
+        .contact-detail .cd-text span {
+            color: var(--gray-600);
+            font-size: 0.95rem;
+        }
+
+        .contact-social {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .contact-social a {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.2rem;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            border: 1px solid var(--gray-200);
+        }
+
+        .contact-social a:hover {
+            background: var(--primary);
+            color: var(--white);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary);
+        }
+
+        .contact-form {
+            background: var(--white);
+            padding: 36px 32px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .contact-form h3 {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .contact-form input,
+        .contact-form select,
+        .contact-form textarea {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid var(--gray-200);
+            border-radius: var(--radius-sm);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            background: var(--off-white);
+            color: var(--gray-800);
+            margin-bottom: 16px;
+        }
+
+        .contact-form input:focus,
+        .contact-form select:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 4px rgba(201, 169, 78, 0.15);
+            background: var(--white);
+        }
+
+        .contact-form textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .contact-form .btn {
+            width: 100%;
+            justify-content: center;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--primary-dark);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 48px 0 24px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .footer-brand h3 {
+            color: var(--white);
+            font-size: 1.4rem;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 8px;
+        }
+
+        .footer-brand p {
+            font-size: 0.9rem;
+            line-height: 1.7;
+            max-width: 320px;
+        }
+
+        .footer-links h4 {
+            color: var(--white);
+            font-size: 1rem;
+            margin-bottom: 12px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links ul li {
+            padding: 4px 0;
+        }
+
+        .footer-links ul li a {
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .footer-links ul li a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .footer-bottom a {
+            color: var(--accent);
+        }
+
+        /* ===== FLOATING WHATSAPP ===== */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            z-index: 999;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: #25D366;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 4px 24px rgba(37, 211, 102, 0.40);
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.08);
+            box-shadow: 0 6px 32px rgba(37, 211, 102, 0.50);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            .about-grid {
+                gap: 40px;
+            }
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 280px;
+                height: 100vh;
+                background: var(--primary-dark);
+                flex-direction: column;
+                padding: 80px 32px 32px;
+                gap: 20px;
+                transition: var(--transition);
+                box-shadow: var(--shadow-lg);
+                align-items: flex-start;
+            }
+
+            .nav-links.open {
+                right: 0;
+            }
+
+            .nav-links a {
+                font-size: 1.1rem;
+            }
+
+            .nav-toggle {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2.4rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            .hero-stats {
+                gap: 28px;
+                flex-wrap: wrap;
+            }
+            .hero-stats .stat-number {
+                font-size: 1.6rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+            .section-padding {
+                padding: 56px 0;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            .about-values {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .admissions-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .boarding-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 28px;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .subjects-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+            .activities-grid {
+                grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            }
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.9rem;
+            }
+            .hero-buttons .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            .about-values {
+                grid-template-columns: 1fr;
+            }
+            .subjects-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .activities-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .gallery-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .contact-form {
+                padding: 24px 18px;
+            }
+            .admission-card {
+                padding: 24px 20px;
+            }
+            .boarding-card {
+                padding: 24px 20px;
+            }
+            .news-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ===== ANIMATIONS ===== */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .delay-1 {
+            transition-delay: 0.1s;
+        }
+        .delay-2 {
+            transition-delay: 0.2s;
+        }
+        .delay-3 {
+            transition-delay: 0.3s;
+        }
+        .delay-4 {
+            transition-delay: 0.4s;
+        }
+    </style>
+</head>
+<body>
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+        <div class="container">
+            <a href="#" class="nav-logo">
+                <span class="logo-icon">P</span>
+                <span>Paul VI High</span>
+            </a>
+            <ul class="nav-links" id="navLinks" role="menubar">
+                <li role="none"><a href="#about" role="menuitem">About</a></li>
+                <li role="none"><a href="#admissions" role="menuitem">Admissions</a></li>
+                <li role="none"><a href="#academics" role="menuitem">Academics</a></li>
+                <li role="none"><a href="#student-life" role="menuitem">Student Life</a></li>
+                <li role="none"><a href="#boarding" role="menuitem">Boarding</a></li>
+                <li role="none"><a href="#contact" role="menuitem">Contact</a></li>
+                <li role="none"><a href="#admissions" class="nav-cta" role="menuitem">Apply Now</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="home">
+        <div class="hero-bg">
+            <!-- Gradient placeholder – replace src with actual image -->
+            <div class="gradient-placeholder">
+                <span>Paul VI High School</span>
+            </div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">Est. 1986 · Catholic Secondary School</div>
+                <h1>
+                    Building Excellence,<br />
+                    <span class="highlight">Character &amp; Future Leaders</span>
+                </h1>
+                <p>
+                    A Catholic secondary school in Mohale's Hoek dedicated to academic
+                    excellence, discipline, and holistic development.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#admissions" class="btn btn-accent">
+                        <i class="fas fa-pen-fancy"></i> Apply Now
+                    </a>
+                    <a href="#about" class="btn btn-white">
+                        <i class="fas fa-chevron-right"></i> Explore School
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">38+</span>
+                        <span class="stat-label">Years of Excellence</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">13</span>
+                        <span class="stat-label">Academic Subjects</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">7</span>
+                        <span class="stat-label">Sports &amp; Activities</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section class="about section-padding" id="about">
+        <div class="container">
+            <div class="section-header fade-up">
+                <span class="text-accent" style="font-weight:600;text-transform:uppercase;letter-spacing:1px;font-size:0.8rem;">About Paul VI</span>
+                <h2 class="section-title">A Legacy of Faith &amp; Excellence</h2>
+                <div class="accent-line"></div>
+                <p class="section-subtitle">
+                    For nearly four decades, Paul VI High School has been shaping the
+                    minds and character of Basotho youth.
+                </p>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-text fade-up delay-1">
+                    <p>
+                        <strong>Paul VI High School</strong> was established in 1986 in
+                        Taung, Mohale's Hoek, as a Catholic secondary school committed to
+                        providing quality education rooted in Christian values. Over the
+                        years, the school has grown into a beacon of academic excellence
+                        and character formation in the region.
+                    </p>
+                    <p>
+                        Our <strong>vision</strong> is to be a center of holistic education
+                        that produces disciplined, God-fearing, and responsible citizens
+                        who contribute meaningfully to the development of Lesotho and the
+                        world.
+                    </p>
+                    <p>
+                        Our <strong>mission</strong> is to provide a conducive learning
+                        environment that nurtures intellectual growth, moral integrity,
+                        and practical skills, empowering every student to reach their full
+                        potential.
+                    </p>
+
+                    <div class="about-values">
+                        <div class="value-chip"><span class="icon">✦</span> Excellence</div>
+                        <div class="value-chip"><span class="icon">✦</span> Discipline</div>
+                        <div class="value-chip"><span class="icon">✦</span> Faith</div>
+                        <div class="value-chip"><span class="icon">✦</span> Leadership</div>
+                        <div class="value-chip"><span class="icon">✦</span> Community</div>
+                    </div>
+                </div>
+                <div class="about-image fade-up delay-2">
+                    <span class="placeholder-text">School Campus</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ADMISSIONS ===== -->
+    <section class="admissions section-padding" id="admissions">
+        <div class="container">
+            <div class="section-header fade-up">
+                <span class="text-accent" style="font-weight:600;text-transform:uppercase;letter-spacing:1px;font-size:0.8rem;">Admissions</span>
+                <h2 class="section-title">2026 Registration <span class="text-accent">Open</span></h2>
+                <div class="accent-line"></div>
+                <p class="section-subtitle">
+                    Secure your place at Paul VI High School. Apply now for Grade 8 and
+                    Grade 10 for the 2026 academic year.
+                </p>
+            </div>
+
+            <div class="admissions-grid">
+                <div class="admission-card fade-up delay-1">
+                    <div class="card-icon"><i class="fas fa-user-graduate"></i></div>
+                    <h3>Grade 8 Applicants</h3>
+                    <p>For students completing primary education and joining secondary school.</p>
+                    <ul>
+                        <li>Completed primary school (Grade 7)</li>
+                        <li>Birth certificate copy</li>
+                        <li>Primary school report card</li>
+                        <li>Passport-size photo (2 copies)</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary"><i class="fas fa-file-alt"></i> Apply for Grade 8</a>
+                </div>
+
+                <div class="admission-card fade-up delay-2">
+                    <div class="card-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                    <h3>Grade 10 Applicants</h3>
+                    <p>For students transferring or joining for the senior secondary phase.</p>
+                    <ul>
+                        <li>Completed Grade 9 (JC pass)</li>
+                        <li>Birth certificate copy</li>
+                        <li>Previous school report</li>
+                        <li>Transfer letter (if applicable)</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary"><i class="fas fa-file-alt"></i> Apply for Grade 10</a>
+                </div>
+            </div>
+
+            <div style="margin-top:40px;display:grid;grid-template-columns:1fr 1fr;gap:24px;" class="fade-up delay-3">
+                <div style="background:var(--primary);color:var(--white);padding:28px 24px;border-radius:var(--radius);">
+                    <h4 style="font-size:1.1rem;margin-bottom:4px;color:var(--white);">
+                        <i class="fas fa-bed" style="color:var(--accent);margin-right:8px;"></i> Boarding Available
+                    </h4>
+                    <p style="color:rgba(255,255,255,0.7);font-size:0.95rem;">
+                        Safe and comfortable boarding for both boys and girls with
+                        dedicated housemasters and matrons.
+                    </p>
+                    <span class="boarding-badge">Boys &amp; Girls</span>
+                </div>
+                <div style="background:var(--off-white);padding:28px 24px;border-radius:var(--radius);border:1px solid var(--gray-200);">
+                    <h4 style="font-size:1.1rem;margin-bottom:4px;color:var(--primary);">
+                        <i class="fas fa-download" style="color:var(--accent);margin-right:8px;"></i> Prospectus
+                    </h4>
+                    <p style="color:var(--gray-600);font-size:0.95rem;">
+                        Download our full school prospectus with detailed information
+                        about academics, boarding, and fees.
+                    </p>
+                    <a href="#" class="btn btn-accent" style="margin-top:12px;padding:10px 24px;font-size:0.85rem;">
+                        <i class="fas fa-file-pdf"></i> Download Prospectus
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ACADEMICS ===== -->
+    <section class="academics section-padding" id="academics">
+        <div class="container">
+            <div class="section-header fade-up">
+                <span class="text-accent" style="font-weight:600;text-transform:uppercase;letter-spacing:1px;font-size:0.8rem;">Academic Programs</span>
+                <h2 class="section-title">Our Subjects</h2>
+                <div class="accent-line"></div>
+                <p class="section-subtitle">
+                    A broad and balanced curriculum designed to prepare students for
+                    tertiary education and life beyond school.
+                </p>
+            </div>
+
+            <div class="subjects-grid">
+                <div class="subject-card fade-up delay-1"><span class="subject-icon"><i class="fas fa-book-open"></i></span> English</div>
+                <div class="subject-card fade-up delay-1"><span class="subject-icon"><i class="fas fa-language"></i></span> Sesotho</div>
+                <div class="subject-card fade-up delay-1"><span class="subject-icon"><i class="fas fa-calculator"></i></span> Mathematics</div>
+                <div class="subject-card fade-up delay-1"><span class="subject-icon"><i class="fas fa-flask"></i></span> Physical Science</div>
+                <div class="subject-card fade-up delay-1"><span class="subject-icon"><i class="fas fa-dna"></i></span> Biology</div>
+                <div class="subject-card fade-up delay-1"><span class="subject-icon"><i class="fas fa-seedling"></i></span> Agriculture</div>
+                <div class="subject-card fade-up delay-2"><span class="subject-icon"><i class="fas fa-utensils"></i></span> Food &amp; Nutrition</div>
+                <div class="subject-card fade-up delay-2"><span class="subject-icon"><i class="fas fa-coins"></i></span> Accounting</div>
+                <div class="subject-card fade-up delay-2"><span class="subject-icon"><i class="fas fa-globe-africa"></i></span> Geography</div>
+                <div class="subject-card fade-up delay-2"><span class="subject-icon"><i class="fas fa-plane"></i></span> Travel &amp; Tourism</div>
+                <div class="subject-card fade-up delay-3"><span class="subject-icon"><i class="fas fa-church"></i></span> Religious Studies</div>
+                <div class="subject-card fade-up delay-3"><span class="subject-icon"><i class="fas fa-laptop"></i></span> ICT</div>
+                <div class="subject-card fade-up delay-3"><span class="subject-icon"><i class="fas fa-heart"></i></span> Life Skills Education</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== STUDENT LIFE ===== -->
+    <section class="student-life section-padding" id="student-life">
+        <div class="container">
+            <div class="section-header fade-up">
+                <span class="text-accent" style="font-weight:600;text-transform:uppercase;letter-spacing:1px;font-size:0.8rem;">Beyond the Classroom</span>
+                <h2 class="section-title">Student Life &amp; Activities</h2>
+                <div class="accent-line"></div>
+                <p class="section-subtitle">
+                    We believe in developing the whole person — through sports, service,
+                    and character-building activities.
+                </p>
+            </div>
+
+            <div class="activities-grid">
+                <div class="activity-card fade-up delay-1"><div class="act-icon"><i class="fas fa-futbol"></i></div><h4>Soccer</h4></div>
+                <div class="activity-card fade-up delay-1"><div class="act-icon"><i class="fas fa-futbol"></i></div><h4>Ladies' Soccer</h4></div>
+                <div class="activity-card fade-up delay-1"><div class="act-icon"><i class="fas fa-volleyball-ball"></i></div><h4>Netball</h4></div>
+                <div class="activity-card fade-up delay-1"><div class="act-icon"><i class="fas fa-volleyball-ball"></i></div><h4>Volleyball</h4></div>
+                <div class="activity-card fade-up delay-2"><div class="act-icon"><i class="fas fa-fist-raised"></i></div><h4>Taekwondo</h4></div>
+                <div class="activity-card fade-up delay-2"><div class="act-icon"><i class="fas fa-campground"></i></div><h4>Boy Scouts &amp; Girl Guides</h4></div>
+                <div class="activity-card fade-up delay-2"><div class="act-icon"><i class="fas fa-shield-alt"></i></div><h4>Cadet</h4></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== BOARDING ===== -->
+    <section class="boarding section-padding" id="boarding">
+        <div class="container">
+            <div class="section-header fade-up">
+                <span class="text-accent" style="font-weight:600;text-transform:uppercase;letter-spacing:1px;font-size:0.8rem;">Boarding Life</span>
+                <h2 class="section-title">Home Away From Home</h2>
+                <div class="accent-line"></div>
+                <p class="section-subtitle">
+                    Our boarding facilities provide a safe, nurturing environment where
+                    students can focus on their studies and personal growth.
+                </p>
+            </div>
+
+            <div class="boarding-grid">
+                <div class="boarding-card fade-up delay-1">
+                    <div class="b-icon"><i class="fas fa-male"></i></div>
+                    <h3>Boys' Boarding</h3>
+                    <p>
+                        A structured and supportive environment for boys, with dedicated
+                        housemasters, study sessions, and recreational activities.
+                    </p>
+                    <ul>
+                        <li>Comfortable dormitories</li>
+                        <li>Supervised study time</li>
+                        <li>Recreation and sports</li>
+                        <li>24/7 pastoral care</li>
+                    </ul>
+                </div>
+                <div class="boarding-card fade-up delay-2">
+                    <div class="b-icon"><i class="fas fa-female"></i></div>
+                    <h3>Girls' Boarding</h3>
+                    <p>
+                        A safe and empowering space for girls, with experienced matrons,
+                        academic support, and a strong sense of community.
+                    </p>
+                    <ul>
+                        <li>Secure and comfortable rooms</li>
+                        <li>Academic mentorship</li>
+                        <li>Life skills development</li>
+                        <li>Health and wellness support</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="margin-top:32px;text-align:center;background:rgba(255,255,255,0.05);border-radius:var(--radius);padding:28px 20px;border:1px solid rgba(255,255,255,0.06);" class="fade-up delay-3">
+                <p style="color:rgba(255,255,255,0.7);font-size:1rem;max-width:600px;margin:0 auto;">
+                    <i class="fas fa-shield-alt" style="color:var(--accent);margin-right:10px;"></i>
+                    Both boarding houses are supervised by qualified staff, ensuring a
+                    safe and conducive learning environment for all students.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== NEWS ===== -->
+    <section class="news section-padding" id="news">
+        <div class="container">
+            <div class="section-header fade-up">
+                <span class="text-accent" style="font-weight:600;text-transform:uppercase;letter-spacing:1px;font-size:0.8rem;">News &amp; Events</span>
+                <h2 class="section-title">Latest Updates</h2>
+                <div class="accent-line"></div>
+                <p class="section-subtitle">
+                    Stay informed about school announcements, achievements, and upcoming
+                    events.
+                </p>
+            </div>
+
+            <div class="news-grid">
+                <article class="news-card fade-up delay-1">
+                    <div class="news-image">School Event</div>
+                    <div class="news-body">
+                        <span class="news-tag">Announcement</span>
+                        <h4>2026 Registration Now Open</h4>
+                        <p>
+                            We are pleased to announce that registration for the 2026
+                            academic year is now open for Grade 8 and Grade 10 applicants.
+                        </p>
+                        <span class="news-date"><i class="far fa-calendar-alt"></i> 15 June 2025</span>
+                    </div>
+                </article>
+
+                <article class="news-card fade-up delay-2">
+                    <div class="news-image">School Event</div>
+                    <div class="news-body">
+                        <span class="news-tag">Achievement</span>
+                        <h4>Excellent LGCSE Results</h4>
+                        <p>
+                            Paul VI High School celebrates outstanding LGCSE results with
+                            a 95% pass rate and numerous distinctions across all subjects.
+                        </p>
+                        <span class="news-date"><i class="far fa-calendar-alt"></i> 20 January 2025</span>
+                    </div>
+                </article>
+
+                <article class="news-card fade-up delay-3">
+                    <div class="news-image">School Event</div>
+                    <div class="news-body">
+                        <span class="news-tag">Event</span>
+                        <h4>Annual Sports Day 2025</h4>
+                        <p>
+                            Join us for our annual sports day featuring soccer, netball,
+                            volleyball, and taekwondo demonstrations. All are welcome!
+                        </p>
+                        <span class="news-date"><i class="far fa-calendar-alt"></i> 12 October 2025</span>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== GALLERY ===== -->
+    <section class="gallery section-padding" id="gallery">
+        <div class="container">
+            <div class="section-header fade-up">
+                <span class="text-accent" style="font-weight:600;text-transform:uppercase;letter-spacing:1px;font-size:0.8rem;">Gallery</span>
+                <h2 class="section-title">Life at Paul VI</h2>
+                <div class="accent-line"></div>
+                <p class="section-subtitle">
+                    A glimpse into the vibrant life and learning environment at our school.
+                </p>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item fade-up delay-1">
+                    <span class="gallery-label">Students</span>
+                </div>
+                <div class="gallery-item fade-up delay-1">
+                    <span class="gallery-label">Classroom</span>
+                </div>
+                <div class="gallery-item fade-up delay-2">
+                    <span class="gallery-label">Sports</span>
+                </div>
+                <div class="gallery-item fade-up delay-2">
+                    <span class="gallery-label">School Event</span>
+                </div>
+                <div class="gallery-item fade-up delay-3">
+                    <span class="gallery-label">Boarding</span>
+                </div>
+                <div class="gallery-item fade-up delay-3">
+                    <span class="gallery-label">Campus</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section class="contact section-padding" id="contact">
+        <div class="container">
+            <div class="section-header fade-up">
+                <span class="text-accent" style="font-weight:600;text-transform:uppercase;letter-spacing:1px;font-size:0.8rem;">Contact Us</span>
+                <h2 class="section-title">Get in Touch</h2>
+                <div class="accent-line"></div>
+                <p class="section-subtitle">
+                    We'd love to hear from you. Reach out to us for inquiries,
+                    applications, or to schedule a visit.
+                </p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-info fade-up delay-1">
+                    <h3>Paul VI High School</h3>
+                    <p style="margin-bottom:20px;">Taung, Mohale's Hoek, Lesotho</p>
+
+                    <div class="contact-detail">
+                        <div class="cd-icon"><i class="fas fa-phone-alt"></i></div>
+                        <div class="cd-text">
+                            <strong>Phone</strong>
+                            <span>+266 6208 9485</span>
+                            <span>+266 5870 0180</span>
+                            <span>+266 5987 2350</span>
+                        </div>
+                    </div>
+
+                    <div class="contact-detail">
+                        <div class="cd-icon"><i class="fas fa-envelope"></i></div>
+                        <div class="cd-text">
+                            <strong>Email</strong>
+                            <span>paulvihso@gmail.com</span>
+                        </div>
+                    </div>
+
+                    <div class="contact-detail">
+                        <div class="cd-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="cd-text">
+                            <strong>Location</strong>
+                            <span>Taung, Mohale's Hoek, Lesotho</span>
+                        </div>
+                    </div>
+
+                    <div class="contact-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    </div>
+
+                    <div style="margin-top:20px;border-radius:var(--radius-sm);overflow:hidden;height:160px;background:var(--gray-200);display:flex;align-items:center;justify-content:center;color:var(--gray-600);font-size:0.9rem;border:1px solid var(--gray-300);">
+                        <i class="fas fa-map" style="margin-right:8px;color:var(--accent);"></i> Google Maps
+                    </div>
+                </div>
+
+                <div class="contact-form fade-up delay-2">
+                    <h3><i class="fas fa-paper-plane" style="color:var(--accent);margin-right:8px;"></i> Send a Message</h3>
+                    <form id="contactForm" novalidate>
+                        <input type="text" placeholder="Full Name" required />
+                        <input type="email" placeholder="Email Address" required />
+                        <input type="tel" placeholder="Phone Number" />
+                        <select required>
+                            <option value="">I am applying for...</option>
+                            <option value="grade8">Grade 8 (2026)</option>
+                            <option value="grade10">Grade 10 (2026)</option>
+                            <option value="transfer">Transfer Student</option>
+                            <option value="inquiry">General Inquiry</option>
+                        </select>
+                        <textarea placeholder="Your message..." required></textarea>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>Paul VI High School</h3>
+                    <p>
+                        A Catholic secondary school in Taung, Mohale's Hoek, Lesotho —
+                        building excellence, character, and future leaders since 1986.
+                    </p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#admissions">Admissions</a></li>
+                        <li><a href="#academics">Academics</a></li>
+                        <li><a href="#student-life">Student Life</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="tel:+26662089485">+266 6208 9485</a></li>
+                        <li><a href="tel:+26658700180">+266 5870 0180</a></li>
+                        <li><a href="tel:+26659872350">+266 5987 2350</a></li>
+                        <li><a href="mailto:paulvihso@gmail.com">paulvihso@gmail.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 Paul VI High School. All rights reserved.</span>
+                <span>Designed with <i class="fas fa-heart" style="color:var(--accent);"></i> in Lesotho</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== WHATSAPP FLOAT ===== -->
+    <a href="https://wa.me/26662089485" class="whatsapp-float" aria-label="Chat on WhatsApp" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- ===== SCRIPTS ===== -->
+    <script>
+        // ----- Navbar scroll effect -----
+        const navbar = document.getElementById('navbar');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            if (currentScroll > 60) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+            lastScroll = currentScroll;
+        });
+
+        // ----- Mobile nav toggle -----
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        navToggle.addEventListener('click', () => {
+            const isOpen = navLinks.classList.toggle('open');
+            navToggle.classList.toggle('active');
+            navToggle.setAttribute('aria-expanded', isOpen);
+        });
+
+        // Close mobile nav on link click
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('open');
+                navToggle.classList.remove('active');
+                navToggle.setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        // ----- Scroll reveal (Intersection Observer) -----
+        const fadeElements = document.querySelectorAll('.fade-up');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.12,
+            rootMargin: '0px 0px -40px 0px'
+        });
+
+        fadeElements.forEach(el => observer.observe(el));
+
+        // ----- Contact form (prevent default) -----
+        document.getElementById('contactForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you shortly.');
+            e.target.reset();
+        });
+
+        // ----- Smooth anchor scroll -----
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                const target = document.querySelector(targetId);
+                if (target) {
+                    e.preventDefault();
+                    const navHeight = document.querySelector('.navbar').offsetHeight;
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset -
+                        navHeight - 16;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        console.log('🇱🇸 Paul VI High School — Building Excellence, Character & Future Leaders');
+    </script>
+</body>
+</html>
